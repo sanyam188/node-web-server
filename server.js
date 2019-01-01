@@ -21,10 +21,10 @@ app.use((req,res,next)=>{
   next();
 });
 
-app.use((req,res,next)=>{
-  res.render('maintainence.hbs');
-  next();
-})
+// app.use((req,res,next)=>{
+//   res.render('maintainence.hbs');
+//   next();
+// })
 
 hbs.registerPartials(__dirname+'/partials');
 hbs.registerHelper('getCurrentYear',()=>{
