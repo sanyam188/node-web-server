@@ -4,6 +4,8 @@ const hbs = require('hbs');
 
 var app = express();
 
+const port = process.env.PORT || 3000;
+
 app.set('view engine','hbs');
 
 app.use(express.static(__dirname+'/public'));
@@ -21,6 +23,7 @@ app.use((req,res,next)=>{
 
 app.use((req,res,next)=>{
   res.render('maintainence.hbs');
+  next();
 })
 
 hbs.registerPartials(__dirname+'/partials');
@@ -69,6 +72,6 @@ app.get('/bad',(req,res)=>{
   })
 })
 
-app.listen(3000,()=>{
+app.listen(port ,()=>{
   console.log('Server is up 8080');
 });
