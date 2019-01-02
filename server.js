@@ -35,6 +35,15 @@ hbs.registerHelper('screamIt',(text)=>{
   return text.toUpperCase();
 });
 
+app.get('/projects',(req,res)=>{
+  res.render('projects.hbs',{
+    title:'Home Page',
+    //year:'2019',
+    year:new Date().getFullYear(),
+    userName:'Sanyam Jain'
+  });
+});
+
 app.get('/',(req,res)=>{
   // //res.send('<h1>Hello express</h1>');
   // res.send({
